@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 
+
+const KEY = import.meta.env.REACT_APP_API_KEY; // Para Vite
+
 const useMovies = (query: string) => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -26,10 +29,11 @@ const useMovies = (query: string) => {
 
         setMovies(data.Search);
         setError("");
-      } catch (err) {
-        if (err.name !== "AbortError") {
-          console.log(err.message);
-          setError(err.message);
+      } catch (err: unknown) {
+        const error = err as Error;
+        if (error.name !== "AbortError") {
+          console.log(error.message);
+          setError(error.message);
         }
       } finally {
         setIsLoading(false);
