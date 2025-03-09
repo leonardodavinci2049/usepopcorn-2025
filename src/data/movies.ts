@@ -1,4 +1,4 @@
-type MovieType = {
+export type MovieType = {
   imdbID: string;
   Title: string;
   Year: string;
@@ -28,7 +28,7 @@ export const tempMovieData: MovieType[] = [
       "https://m.media-amazon.com/images/M/MV5BYWZjMjk3ZTItODQ2ZC00NTY5LWE0ZDYtZTI3MjcwN2Q5NTVkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SX300.jpg",
   },
 ];
-type WatchedMovieType = {
+export type WatchedMovieType = {
   imdbID: string;
   Title: string;
   Year: string;
