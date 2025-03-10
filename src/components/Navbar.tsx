@@ -1,15 +1,18 @@
+import { ReactNode } from "react";
 import Logo from "./Logo";
-import NumResults from "./NumResults";
-import Search from "./Search";
 
-const NavBar = () => {
+
+interface NavbarProps {
+  children: ReactNode;
+}
+
+const Navbar = ({ children }: NavbarProps) => {
   return (
     <div className="grid grid-cols-3 items-center h-[7.2rem] px-[3.2rem] bg-primary rounded-[0.9rem] ">
       <Logo />
-      <Search />
-      <NumResults />
+      {children}
     </div>
   );
 };
 
-export default NavBar;
+export default Navbar;

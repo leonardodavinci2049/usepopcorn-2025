@@ -1,16 +1,20 @@
-import { MovieType } from "../data/movies";
+import { MovieType } from "../types/MovieType";
+import Movie from "./Movie";
 
 interface MovieDetailsProps {
   movies: MovieType[];
-  onSelectMovie: (movie: Movie) => void;
+  onSelectMovie: (movie: MovieType) => void;
 }
 const MovieList: React.FC<MovieDetailsProps> = ({ movies, onSelectMovie }) => {
   return (
-    <ul>
-      {movies.map((movie) => (
-        <li key={movie.imdbID} onClick={() => onSelectMovie(movie)}>
-          {movie.Title}
-        </li>
+    <ul className="list-none py-2 overflow-auto">
+      {movies?.map((movie) => (
+
+       <Movie
+       key={movie.imdbID}
+       movie={movie}
+       onSelectMovie={() => onSelectMovie(movie)}
+     />
       ))}
     </ul>
   );

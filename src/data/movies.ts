@@ -1,61 +1,26 @@
-export type MovieType = {
-  imdbID: string;
-  Title: string;
-  Year: string;
-  Poster: string;
-};
+import { MovieType } from "../types/MovieType";
+
 
 export const tempMovieData: MovieType[] = [
   {
     imdbID: "tt1375666",
-    Title: "Inception",
+    Title: "inception",
     Year: "2010",
     Poster:
-      "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+      "https://m.media-amazon.com/images/m/mv5bmjaxmzy3njcxnf5bml5banbnxkftztcwnti5otm0mw@@._v1_sx300.jpg",
   },
   {
     imdbID: "tt0133093",
-    Title: "The Matrix",
+    Title: "the matrix",
     Year: "1999",
     Poster:
-      "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+      "https://m.media-amazon.com/images/m/mv5bnzqzotk3otatndq0zi00ztvklwi0mtetmdllzjnkyznjntc4l2ltywdlxkeyxkfqcgdeqxvynju0otq0oty@._v1_sx300.jpg",
   },
   {
     imdbID: "tt6751668",
-    Title: "Parasite",
+    Title: "parasite",
     Year: "2019",
     Poster:
       "https://m.media-amazon.com/images/M/MV5BYWZjMjk3ZTItODQ2ZC00NTY5LWE0ZDYtZTI3MjcwN2Q5NTVkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SX300.jpg",
-  },
-];
-export type WatchedMovieType = {
-  imdbID: string;
-  Title: string;
-  Year: string;
-  Poster: string;
-  runtime: number;
-  imdbRating: number;
-  userRating: number;
-};
-export const tempWatchedData: WatchedMovieType[] = [
-  {
-    imdbID: "tt1375666",
-    Title: "Inception",
-    Year: "2010",
-    Poster:
-      "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
-    runtime: 148,
-    imdbRating: 8.8,
-    userRating: 10,
-  },
-  {
-    imdbID: "tt0088763",
-    Title: "Back to the Future",
-    Year: "1985",
-    Poster:
-      "https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
-    runtime: 116,
-    imdbRating: 8.5,
-    userRating: 9,
   },
 ];

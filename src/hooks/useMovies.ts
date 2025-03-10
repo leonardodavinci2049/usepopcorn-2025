@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 
+
+const KEY = import.meta.env.VITE_API_KEY; // Para Vite
+
 const useMovies = (query: string) => {
   const [movies, setMovies] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -13,6 +16,8 @@ const useMovies = (query: string) => {
         setIsLoading(true);
         setError("");
 
+     // console.log(`http://www.omdbapi.com/?apikey=${KEY}&s=${query}`);
+   
         const res = await fetch(
           `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
           { signal: controller.signal }
@@ -26,10 +31,11 @@ const useMovies = (query: string) => {
 
         setMovies(data.Search);
         setError("");
-      } catch (err) {
-        if (err.name !== "AbortError") {
-          console.log(err.message);
-          setError(err.message);
+      } catch (err: unknown) {
+        const error = err as Error;
+        if (error.name !== "AbortError") {
+          console.log(error.message);
+          setError(error.message);
         }
       } finally {
         setIsLoading(false);
@@ -48,7 +54,7 @@ const useMovies = (query: string) => {
       controller.abort();
     };
 
-  }, [query]);
+  }, [query, isLoading]);
 
   return { movies, isLoading, error };
 };
