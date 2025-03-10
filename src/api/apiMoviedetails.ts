@@ -1,6 +1,6 @@
 import { MovieType } from "../types/MovieType";
 
-const KEY = import.meta.env.REACT_APP_API_KEY; // Para Vite
+const KEY = import.meta.env.VITE_API_KEY; // Para Vite
 
 
 export const getMoviedetails = async (id: string) => {

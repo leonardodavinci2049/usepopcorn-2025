@@ -24,21 +24,23 @@ function App() {
   const { movies, isLoading, error } = useMovies(query);
   const [watched, setWatched] = useLocalStorageState([], "watched");
 
-  function handleSelectMovie(id: string): void {
-    setSelectedId((selectedId) => (id === selectedId ? null : id));
+  function handleSelectMovie(movie: MovieType): void {
+    setSelectedId((selectedId) => (movie.imdbID === selectedId ? null : movie.imdbID));
   }
 
-  function handleCloseMovie() {
-    setSelectedId(null);
+  function handleCloseMovie(id: string): void {
+    setSelectedId((selectedID) => (id === selectedID ? null : null)); 
+      
   }
   function handleAddWatched(movie: MovieType) {
     setWatched((watched: MovieType[]) => [...watched, movie]);
   }
 
   function handleDeleteWatched(id: string) {
-    setWatched((watched: MovieType[]) => watched.filter((movie) => movie.imdbid !== id));
+    setWatched((watched: MovieType[]) => watched.filter((movie) => movie.imdbID !== id));
   }
 
+// console.log(`isLoading: ${isLoading}`);
 
   return (
     <div>
@@ -46,6 +48,8 @@ function App() {
         <Search query={query} setQuery={setQuery} />
         <NumResults movies={movies} />
       </Navbar>
+
+      
       <Main>
       <Box>
           {isLoading && <Loader />}

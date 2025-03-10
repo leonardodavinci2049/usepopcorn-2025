@@ -1,5 +1,6 @@
 const Loader = () => {
-  return <p className="loader">Loading...</p>;
+  console.log("======== Loader ===========");
+  return <p className="text-center uppercase text-3xl font-semibold m-20">Loading...</p>;
 };
 
 export default Loader;

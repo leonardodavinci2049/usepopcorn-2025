@@ -1,18 +1,18 @@
 
 export type MovieType = {
-  imdbid: string;
-  title: string;
-  year?: string;
-  poster?: string;
-  runtime?: number;
-  imdbrating?: number;
-  userrating?: number;
-  plot?: string;
-  released?: string;
+  imdbID: string;
+  Title: string;
+  Year?: string;
+  Poster?: string;
+  Runtime?: string;
+  imdbRating?: string;
+  userRating?: number;
+  Plot?: string;
+  Released?: string;
   Type?: string;
-  actors?: string;
-  director?: string;
-  genre?: string;
+  Actors?: string;
+  Director?: string;
+  Genre?: string;
   countRatingDecisions?: number;
   // outros campos conforme necessário
 }

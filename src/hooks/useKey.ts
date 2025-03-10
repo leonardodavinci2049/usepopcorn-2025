@@ -1,12 +1,16 @@
 import { useEffect } from "react";
 
+type UseKeyProps = {
+  key: string;
+  onCloseMovie: (id: string) => void;
+};
 
-export function useKey(key: string, action: () => void): void {
+export function useKey({key, onCloseMovie}: UseKeyProps): void {
   useEffect(
     function () {
       function callback(e: KeyboardEvent) {
         if (e.key.toLowerCase() === key.toLowerCase()) {
-          action();
+          onCloseMovie('');
         }
       }
 
@@ -16,6 +20,6 @@ export function useKey(key: string, action: () => void): void {
         document.removeEventListener("keydown", callback);
       };
     },
-    [action, key]
+    [onCloseMovie, key]
   );
 }

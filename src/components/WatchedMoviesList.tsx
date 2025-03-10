@@ -3,11 +3,11 @@ import WatchedMovie from "./WatchedMovie";
 
 interface WatchedMovie {
   imdbID: string;
-  poster: string;
+  Poster: string;
   Title: string;
   imdbRating: number;
   userRating: number;
-  runtime: string;
+  Runtime: string;
 }
 
 interface WatchedMovieListProps {
@@ -17,7 +17,7 @@ interface WatchedMovieListProps {
 
 const WatchedMovieList: React.FC<WatchedMovieListProps> = ({watched, onDeleteWatched}) => {
   return (
-    <ul className="list">
+    <ul className="list-none py-2 overflow-auto">
       {watched?.map((movie) => (
        <WatchedMovie key={movie.imdbID} movie={movie} onDeleteWatched={onDeleteWatched} />
       ))}

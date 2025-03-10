@@ -1,5 +1,5 @@
 import React from 'react';
-import { MovieType } from '../data/movies';
+import { MovieType } from '../types/MovieType';
 
 interface NumResultsProps {
   movies: MovieType[];
