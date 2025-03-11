@@ -24,6 +24,10 @@ function App() {
   const { movies, isLoading, error } = useMovies(query);
   const [watched, setWatched] = useLocalStorageState([], "watched");
 
+  console.log(`====== AAAAAA ======isLoading ===== ${isLoading}`);
+
+
+
   function handleSelectMovie(movie: MovieType): void {
     setSelectedId((selectedId) => (movie.imdbID === selectedId ? null : movie.imdbID));
   }
